@@ -1,6 +1,7 @@
 # Wellington Region Public Transport Network Analysis Program
-This is a Java-based program that analyzes the Wellington Region Public Transport Network and provides me with four essential tasks. These tasks are:
+This is a Java-based program that analyzes the Wellington Region Public Transport Network and provides me with four essential tasks. 
 
+These tasks are:
 - Displaying the network of stops and connections with the option to set the maximum acceptable walking distance
 - Finding the shortest route between two places within the network
 - Identifying the sub-components of the network that aren't fully connected to each other
