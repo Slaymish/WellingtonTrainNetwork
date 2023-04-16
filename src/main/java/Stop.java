@@ -29,7 +29,7 @@ public class Stop implements Comparable<Stop> {
 
     /**
      * Constructor for a stop
-     * 
+     *
      * @param id   4 or 5 digit stop id
      * @param name Long name for the stop
      * @param lat
@@ -67,7 +67,7 @@ public class Stop implements Comparable<Stop> {
     public double distanceTo(GisPoint loc) {
         return this.loc.distance(loc);
     }
-    
+
     /**
      * Returns distance in meters between this stop and another stop
      */
@@ -77,15 +77,19 @@ public class Stop implements Comparable<Stop> {
 
     /**
      * Compare by alphabetic order of name,
+     * If two stops have the same name, then
+     * compare their id's in case they are not the same stop.
      */
     public int compareTo(Stop other){
-        return this.name.compareTo(other.name);
+        int ans = this.name.compareTo(other.name);
+        if (ans!=0) {return ans;}
+        return this.id.compareTo(other.id);
     }
 
 
-    /** 
+    /**
      * Display a stop
-     * 
+     *
      * @return string of the stop information in the format: XXXX: long name at (lon,lat)
      */
     public String toString() {
@@ -131,7 +135,7 @@ public class Stop implements Comparable<Stop> {
     public Collection<Edge> getForwardEdges() {
         return Collections.unmodifiableCollection(forwardEdges);
     }
-         
+
     /** Get the collection of backwardEdges*/
     public Collection<Edge> getBackwardEdges(){
         return Collections.unmodifiableCollection(backwardEdges);
@@ -141,7 +145,7 @@ public class Stop implements Comparable<Stop> {
     public Collection<Stop> getNeighbours() {
         return Collections.unmodifiableSet(neighbours);
     }
-         
+
     /** add a new forward edge  */
     public void addForwardEdge(Edge edge) {
         this.forwardEdges.add(edge);
@@ -171,8 +175,8 @@ public class Stop implements Comparable<Stop> {
     //--------------------------------------------
     // fields and methods for finding connected components / subgraphs.
     //--------------------------------------------
-    
-    /** 
+
+    /**
      * @param subGraphId the id of the graph so stops in the game subgraph can be drawn in the same colour or highlighted
      */
     public void setSubGraphId(int id) {
