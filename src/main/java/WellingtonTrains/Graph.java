@@ -76,10 +76,20 @@ public class Graph {
      * - Construct the forward and backward neighbour edges of each Stop.
      */
     private void createAndConnectEdges() {
-        // TODO
-
-
-
+        for(Line line : lines){
+            List<Stop> stops = line.getStops();
+            List<Integer> times = line.getTimes();
+            for(int i=0; i<stops.size()-1; i++){
+                Stop from = stops.get(i);
+                Stop to = stops.get(i+1);
+                double time = times.get(i+1) - times.get(i);
+                double distance = from.distanceTo(to);
+                Edge edge = new Edge(from, to,line.getType(),line, time,distance);
+                edges.add(edge);
+                from.addForwardEdge(edge);
+                to.addBackwardEdge(edge);
+            }
+        }
     }
 
     /** 
@@ -89,7 +99,16 @@ public class Graph {
      * It may assume that there are no walking edges at this point.
      */
     public void computeNeighbours(){
-        // TODO
+        for(Stop stop: stops){
+            Set<Stop> neighbours = new HashSet<Stop>();
+            for(Edge edge: stop.getForwardEdges()){
+                neighbours.add(edge.toStop());
+            }
+            for(Edge edge: stop.getBackwardEdges()){
+                neighbours.add(edge.fromStop());
+            }
+            neighbours.forEach(stop::addNeighbour);
+        }
 
 
     }
@@ -110,11 +129,21 @@ public class Graph {
     public void recomputeWalkingEdges(double walkingDistance) {
         int count = 0;
         // TODO
-
-
-
-
-
+        for(Stop stop1: stops){
+            for(Stop stop2: stops){
+                if(stop1.distanceTo(stop2) <= walkingDistance){
+                    Edge edge1 = new Edge(stop1, stop2, Transport.WALKING, null, 0, stop1.distanceTo(stop2));
+                    Edge edge2 = new Edge(stop2, stop1, Transport.WALKING, null, 0, stop1.distanceTo(stop2));
+                    stop1.addForwardEdge(edge1);
+                    stop2.addBackwardEdge(edge1);
+                    stop2.addForwardEdge(edge2);
+                    stop1.addBackwardEdge(edge2);
+                    edges.add(edge1);
+                    edges.add(edge2);
+                    count++;
+                }
+            }
+        }
 
         System.out.println("Number of walking edges added: " + count);
     }
@@ -195,9 +224,5 @@ public class Graph {
         }
         numComponents = 0;
     }
-
-
-
-
 
 }
