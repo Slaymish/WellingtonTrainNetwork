@@ -7,7 +7,7 @@
 
 import java.util.List;
 
-public record PathItem(Stop currentNode, double costSoFar, double estimatedTotalCost, List<Edge> pathSoFar) implements Comparable<PathItem> {
+public record PathItem(Stop currentNode, Edge previousEdge, double costSoFar, double estimatedTotalCost) implements Comparable<PathItem> {
     @Override
     public int compareTo(PathItem other) {
         if (this.estimatedTotalCost < other.estimatedTotalCost) {

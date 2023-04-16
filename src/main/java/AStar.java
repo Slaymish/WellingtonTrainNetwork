@@ -20,37 +20,40 @@ public class AStar {
         if (start == null || goal == null) {return null;}
         timeOrDistance= (timeOrDistance.equals("time"))?"time":"distance";
 
-        // Stop currentNode, double costSoFar, double estimatedTotalCost, List<Edge> pathSoFar
+        // fringe = currentNode, previousEdge, costSoFar, estimatedTotalCost
 
         Queue<PathItem> fringe = new PriorityQueue<PathItem>();
         Set<Stop> visited = new HashSet<Stop>();
         Map<Stop,Edge> backpointers = new HashMap<Stop,Edge>();
 
-        fringe.add(new PathItem(start, null, 0, new ArrayList<Edge>()));
+        fringe.add(new PathItem(start, null, 0, heuristic(start, goal)));
 
-
-
-
-
-        /*
-	    while fringe is not empty:
-            <node,edge,length-to-node,est-total,path> (from fringe)
-            if node is not visited:
-                visit node
-                put <node,edge> into backpointers
-                if node=goal:
-                    return ReconstructPath(start,goal,backpointers)
-                for each neigh-edge out of node to a neighbour:
-                    if neighbour is not visited:
-                        length-to-neighbour = length-to-node + neigh-edge.length
-                        est-total-path = length-to-neighbour + est(neighbour,goal)
-                        add <neighbour, neigh-edge, length-to-neigh, est-total-path> to fringe
-         */
-
-
-
-
-
+        while (!fringe.isEmpty()) {
+            PathItem current = fringe.poll();
+            if (!visited.contains(current.currentNode())) {
+                visited.add(current.currentNode());
+                backpointers.put(current.currentNode(), current.previousEdge());
+                if (current.currentNode() == goal) {
+                    // Return list of edges
+                    List<Edge> path = new ArrayList<Edge>();
+                    Stop currentStop = goal;
+                    while (currentStop != start) {
+                        Edge edge = backpointers.get(currentStop);
+                        path.add(edge);
+                        currentStop = edge.fromStop();
+                    }
+                    Collections.reverse(path);
+                    return path;
+                }
+                for (Edge edge : current.currentNode().getForwardEdges()) {
+                    if (!visited.contains(edge.toStop())) {
+                        double costSoFar = current.costSoFar() + edgeCost(edge);
+                        double estimatedTotalCost = costSoFar + heuristic(edge.toStop(), goal);
+                        fringe.add(new PathItem(edge.toStop(), edge, costSoFar, estimatedTotalCost));
+                    }
+                }
+            }
+        }
         return null;   // fix this!!!
     }
 
