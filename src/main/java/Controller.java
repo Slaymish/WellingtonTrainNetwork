@@ -1,4 +1,4 @@
-package WellingtonTrains; /** Top level program controlling the interface */
+/** Top level program controlling the interface */
 
 import javafx.fxml.FXML;
 import javafx.geometry.Point2D;
@@ -12,13 +12,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.paint.Color;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 
 import java.util.Locale;
-import java.util.ResourceBundle;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +27,6 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.*;
 
@@ -100,13 +96,13 @@ public class Controller {
     public void initialize() {
 
         // load the input files
-        Map<String, Stop> stopMap = loadStops(new File("data/stops.txt"));
-        Collection<Line> lines = loadLines(new File("data/lines.txt"), stopMap);
+        Map<String, Stop> stopMap = loadStops(new File("/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2/src/data/stops.txt"));
+        Collection<Line> lines = loadLines(new File("/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2/src/data/lines.txt"), stopMap);
                                
         this.graph = new Graph(stopMap.values(), lines);
         System.out.println("Loaded Graph Data");
         
-        this.zoneData = new Zoning(new File("data/WellingtonZones.csv"));
+        this.zoneData = new Zoning(new File("/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2/src/data/WellingtonZones.csv"));
         System.out.println("Loaded Zone Data");
 
         drawGraph(graph);
@@ -355,9 +351,8 @@ public class Controller {
     }
 
     /**
-     * Find the closest stop to the given Gis Point location
-     * @param x
-     * @param y
+     * Find the closest stop to the given location
+     * @param loc
      * @param graph
      * @return
      */

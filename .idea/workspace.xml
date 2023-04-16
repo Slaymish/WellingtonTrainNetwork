@@ -5,19 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9d33c4d-c10b-45c9-9cfb-6ef71da587e8" name="Changes" comment="added javafx to project, everything compiles now">
-      <change afterPath="$PROJECT_DIR$/.idea/resourceBundles.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/resourceBundles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/resourceBundles.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/data/WellingtonZones.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WellingtonTrains/data/WellingtonZones.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/data/lines.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WellingtonTrains/data/lines.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/data/stops.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WellingtonTrains/data/stops.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/AStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WellingtonTrains/AStar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WellingtonTrains/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/PathItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WellingtonTrains/PathItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/strings_en_NZ.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/strings_en_NZ.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/strings_mi_NZ.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/strings_mi_NZ.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/strings_en_NZ.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/strings_en_NZ.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/strings_mi_NZ.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/strings_mi_NZ.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/AStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AStar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/ArticulationPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArticulationPoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/Components.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Components.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/GisPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GisPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Line.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/MapView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MapView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/PathItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PathItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/Projection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Projection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/Stop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Stop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/Transport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/Zoning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Zoning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/data/WellingtonZones.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/WellingtonZones.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/data/lines.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/lines.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WellingtonTrains/data/stops.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/stops.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +53,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2/src/main/java/WellingtonTrains/resources",
+    "last_opened_file_path": "/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2/src/main/java/WellingtonTrains",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.44942528",
     "settings.editor.selected.configurable": "preferences.pathVariables"
@@ -53,22 +63,23 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/WellingtonTrains/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/WellingtonTrains" />
+      <recent name="$PROJECT_DIR$/src/main/java/WellingtonTrains/resources" />
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/src/main" />
-      <recent name="$PROJECT_DIR$/src/main/java/WellingtonTrains" />
+      <recent name="$PROJECT_DIR$/src/resources" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/main/java/WellingtonTrains/resources/strings" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="WellingtonTrains" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="WellingtonTrains.Main" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="COMPAssignment2" />
       <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.fxml,javafx.controls,javafx.graphics" />
       <method v="2">
@@ -85,7 +96,8 @@
       <option name="presentableId" value="Default" />
       <updated>1681612160098</updated>
       <workItem from="1681612164445" duration="797000" />
-      <workItem from="1681612972876" duration="5922000" />
+      <workItem from="1681612972876" duration="6027000" />
+      <workItem from="1681619017941" duration="6986000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1681612249181</created>
@@ -122,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681613747721</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added javafx to project, everything compiles now">
+      <created>1681618969030</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681618969030</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +170,11 @@
           <properties class="java.util.MissingResourceException" package="java.util" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Controller.java</url>
+          <line>535</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

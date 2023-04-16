@@ -1,5 +1,3 @@
-package WellingtonTrains;
-
 import java.util.Set;
 
 /**

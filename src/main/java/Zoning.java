@@ -1,5 +1,3 @@
-package WellingtonTrains;
-
 import java.io.File;
 import java.nio.file.Files;
 import java.io.IOException;

@@ -1,5 +1,3 @@
-package WellingtonTrains;
-
 /**
  * A directed edge in the graph, with associated data.
  * fromStop and toStop are the stops at the beginning and end of the edge

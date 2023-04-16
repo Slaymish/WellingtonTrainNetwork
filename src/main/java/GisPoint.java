@@ -1,7 +1,3 @@
-package WellingtonTrains;/*
- * Simple data structure to represent a Geographical Information System (GIS) point. 
-*/
-
 public class GisPoint {
     public final static double EARTH_CIRCUMFANCE = 40075016.68557849; // meters
     public final static double SCALE = EARTH_CIRCUMFANCE / 360.0; // meters per degree

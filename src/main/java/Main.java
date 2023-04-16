@@ -1,6 +1,3 @@
-package WellingtonTrains;
-
-import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -22,7 +19,7 @@ public class Main extends Application {
         // load the strings for language support
         // currently en_NZ and mi_NZ are supported
         locale = new Locale("en", "NZ");
-        bundle = ResourceBundle.getBundle("resources/strings", locale);
+        bundle = ResourceBundle.getBundle("strings", locale);
 
         // load the fxml file to set up the GUI
         reload();
@@ -31,7 +28,7 @@ public class Main extends Application {
 
     // set locale function
     public static void setLocale(Locale locale) {
-        bundle = ResourceBundle.getBundle("resources/strings", locale);
+        bundle = ResourceBundle.getBundle("strings", locale);
     }
 
     public void reload() throws IOException {
@@ -42,9 +39,9 @@ public class Main extends Application {
         stage.show();
         stage.setOnCloseRequest(e -> {
             System.exit(0);
-            
+
         });
-    
+
     }
 
     public static void main(String[] args) {

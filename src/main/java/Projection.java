@@ -1,5 +1,3 @@
-package WellingtonTrains;
-
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.Canvas;
 
