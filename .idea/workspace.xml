@@ -4,16 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9d33c4d-c10b-45c9-9cfb-6ef71da587e8" name="Changes" comment="updated stop,articulationpoints,components files">
+    <list default="true" id="a9d33c4d-c10b-45c9-9cfb-6ef71da587e8" name="Changes" comment="Finished A*, finished Components (hvnt tested)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/TestGraphAndComponents.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AStar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Components.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Components.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PathItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PathItem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,7 +61,17 @@
       <recent name="$PROJECT_DIR$/src/main/java/WellingtonTrains/resources/strings" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.WellingtonTrains (test)">
+    <configuration name="WellingtonTrains (test)" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="18" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="TestGraphAndComponents" />
+      <module name="COMPAssignment2" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.fxml,javafx.controls,javafx.graphics" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WellingtonTrains" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -67,6 +82,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.WellingtonTrains" />
+      <item itemvalue="Application.WellingtonTrains (test)" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -80,7 +99,8 @@
       <workItem from="1681612972876" duration="6027000" />
       <workItem from="1681619017941" duration="7076000" />
       <workItem from="1681626572282" duration="12000" />
-      <workItem from="1681630994021" duration="2587000" />
+      <workItem from="1681630994021" duration="2618000" />
+      <workItem from="1681966158476" duration="521000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1681612249181</created>
@@ -138,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681631088856</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Finished A*, finished Components (hvnt tested)">
+      <created>1681633750510</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681633750510</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +187,8 @@
     <MESSAGE value="added javafx to project, everything compiles now" />
     <MESSAGE value="task 1 complete, hardcoded pathnames, started a*" />
     <MESSAGE value="updated stop,articulationpoints,components files" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated stop,articulationpoints,components files" />
+    <MESSAGE value="Finished A*, finished Components (hvnt tested)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished A*, finished Components (hvnt tested)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
