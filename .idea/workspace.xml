@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9d33c4d-c10b-45c9-9cfb-6ef71da587e8" name="Changes" comment="Finished A*, finished Components (hvnt tested)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/TestGraphAndComponents.java" afterDir="false" />
+    <list default="true" id="a9d33c4d-c10b-45c9-9cfb-6ef71da587e8" name="Changes" comment="Added testing code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +100,7 @@
       <workItem from="1681619017941" duration="7076000" />
       <workItem from="1681626572282" duration="12000" />
       <workItem from="1681630994021" duration="2618000" />
-      <workItem from="1681966158476" duration="521000" />
+      <workItem from="1681966158476" duration="2382000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1681612249181</created>
@@ -165,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681633750510</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added testing code">
+      <created>1681966927341</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681966927341</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,7 +195,8 @@
     <MESSAGE value="task 1 complete, hardcoded pathnames, started a*" />
     <MESSAGE value="updated stop,articulationpoints,components files" />
     <MESSAGE value="Finished A*, finished Components (hvnt tested)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished A*, finished Components (hvnt tested)" />
+    <MESSAGE value="Added testing code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added testing code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,10 +1,4 @@
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Set;
-import java.util.TreeSet;
-import java.util.HashSet;
+import java.util.*;
 
 
 /**
@@ -123,22 +117,26 @@ public class Graph {
      */
     public void recomputeWalkingEdges(double walkingDistance) {
         int count = 0;
-        // TODO
-        for(Stop stop1: stops){
+
+        Map<Stop,Stop> validWalks = new HashMap<Stop,Stop>();
+        stops.forEach((Stop stop)->{
             for(Stop stop2: stops){
-                if(stop1.distanceTo(stop2) <= walkingDistance){
-                    Edge edge1 = new Edge(stop1, stop2, Transport.WALKING, null, 0, stop1.distanceTo(stop2));
-                    Edge edge2 = new Edge(stop2, stop1, Transport.WALKING, null, 0, stop1.distanceTo(stop2));
-                    stop1.addForwardEdge(edge1);
-                    stop2.addBackwardEdge(edge1);
-                    stop2.addForwardEdge(edge2);
-                    stop1.addBackwardEdge(edge2);
-                    edges.add(edge1);
-                    edges.add(edge2);
-                    count++;
+                if(stop.distanceTo(stop2) <= walkingDistance){
+                    validWalks.put(stop,stop2);
                 }
             }
-        }
+        });
+        count = validWalks.size();
+        validWalks.forEach((Stop from, Stop to)->{
+            Edge edge = new Edge(from, to, Transport.WALKING, null, 0, from.distanceTo(to));
+            Edge edge2 = new Edge(to, from, Transport.WALKING, null, 0, from.distanceTo(to));
+            edges.add(edge);
+            edges.add(edge2);
+            from.addForwardEdge(edge);
+            to.addBackwardEdge(edge);
+            to.addForwardEdge(edge2);
+            from.addBackwardEdge(edge2);
+        });
 
         System.out.println("Number of walking edges added: " + count);
     }
