@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9d33c4d-c10b-45c9-9cfb-6ef71da587e8" name="Changes" comment="Added testing code">
-      <change afterPath="$PROJECT_DIR$/src/main/java/TestAStar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/TestArticPts.java" afterDir="false" />
+    <list default="true" id="a9d33c4d-c10b-45c9-9cfb-6ef71da587e8" name="Changes" comment="Added astar and artic points">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AStar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ArticulationPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArticulationPoints.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +103,7 @@
       <workItem from="1681626572282" duration="12000" />
       <workItem from="1681630994021" duration="2618000" />
       <workItem from="1681966158476" duration="2382000" />
-      <workItem from="1682212392191" duration="1391000" />
+      <workItem from="1682212392191" duration="5334000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1681612249181</created>
@@ -185,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682212430924</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added astar and artic points">
+      <created>1682213843296</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1682213843296</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +213,8 @@
     <MESSAGE value="updated stop,articulationpoints,components files" />
     <MESSAGE value="Finished A*, finished Components (hvnt tested)" />
     <MESSAGE value="Added testing code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added testing code" />
+    <MESSAGE value="Added astar and artic points" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added astar and artic points" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
