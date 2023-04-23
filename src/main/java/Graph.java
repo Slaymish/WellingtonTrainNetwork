@@ -112,35 +112,31 @@ public class Graph {
      * based on the specified walkingDistance:
      * identify all pairs of stops * that are at most walkingDistance apart,
      * and construct edges (both ways) between the stops
-     * add the edges to the forward and backward neighbouars of the Stops
+     * add the edges to the forward and backward neighbours of the Stops
      * add the edges to the walking edges of the graph.
      * Assume that all the previous walking edges have been removed
      */
     public void recomputeWalkingEdges(double walkingDistance) {
-        AtomicInteger count = new AtomicInteger();
-
-        Map<Stop,Stop> validWalks = new HashMap<Stop,Stop>();
-        stops.forEach((Stop stop)->{
+        int count = 0;
+        for(Stop stop1: stops){
             for(Stop stop2: stops){
-                if(stop.distanceTo(stop2) <= walkingDistance){
-                    validWalks.put(stop,stop2);
+                if(stop1.distanceTo(stop2) <= walkingDistance && !stop1.equals(stop2)){
+                    double distance = stop1.distanceTo(stop2);
+                    double time = distance/Transport.WALKING_SPEED_MPS;
+                    Edge edge1 = new Edge(stop1, stop2, Transport.WALKING, null, time, distance);
+                    Edge edge2 = new Edge(stop2, stop1, Transport.WALKING, null, time, distance);
+                    stop1.addForwardEdge(edge1);
+                    stop1.addBackwardEdge(edge2);
+
+                    stop2.addForwardEdge(edge2);
+                    stop2.addBackwardEdge(edge1);
+
+                    stop1.addNeighbour(stop2);
+                    stop2.addNeighbour(stop1);
+                    count++;
                 }
             }
-        });
-        validWalks.forEach((Stop from, Stop to)->{
-            if(!from.equals(to)) {
-                Edge edge = new Edge(from, to, Transport.WALKING, null,from.distanceTo(to)/Transport.WALKING_SPEED_MPS, from.distanceTo(to));
-                Edge edge2 = new Edge(to, from, Transport.WALKING, null, from.distanceTo(to)/Transport.WALKING_SPEED_MPS, from.distanceTo(to));
-                edges.add(edge);
-                edges.add(edge2);
-                from.addForwardEdge(edge);
-                to.addBackwardEdge(edge);
-                to.addForwardEdge(edge2);
-                from.addBackwardEdge(edge2);
-                count.getAndIncrement();
-                count.getAndIncrement();
-            }
-        });
+        }
 
         System.out.println("Number of walking edges added: " + count);
     }

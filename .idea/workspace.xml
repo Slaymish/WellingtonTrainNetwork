@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9d33c4d-c10b-45c9-9cfb-6ef71da587e8" name="Changes" comment="Finished ArticulationPoints, havn't tested">
-      <change afterPath="$PROJECT_DIR$/src/data/challenge/stop_pattern_trips.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/challenge/stop_times.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/challenge/transfers.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/challenge/trips.txt" afterDir="false" />
+    <list default="true" id="a9d33c4d-c10b-45c9-9cfb-6ef71da587e8" name="Changes" comment="still not sure on walking edges">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,23 +35,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2/src/main/java/WellingtonTrains&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.44942528&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2/src/main/java/challenge",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.44942528",
+    "settings.editor.selected.configurable": "preferences.pathVariables"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/challenge" />
       <recent name="$PROJECT_DIR$/src/main/java/WellingtonTrains" />
       <recent name="$PROJECT_DIR$/src/main/java/WellingtonTrains/resources" />
       <recent name="$PROJECT_DIR$/src/main" />
@@ -64,6 +63,9 @@
       <recent name="$PROJECT_DIR$/src/resources" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/main/java/WellingtonTrains/resources/strings" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="challenge" />
     </key>
   </component>
   <component name="RunManager" selected="Application.WellingtonTrains">
@@ -107,7 +109,7 @@
       <workItem from="1681630994021" duration="2618000" />
       <workItem from="1681966158476" duration="2382000" />
       <workItem from="1682212392191" duration="5380000" />
-      <workItem from="1682234522964" duration="1211000" />
+      <workItem from="1682234522964" duration="2568000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1681612249181</created>
@@ -200,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682220437243</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="still not sure on walking edges">
+      <created>1682238266501</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1682238266501</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +235,8 @@
     <MESSAGE value="Added testing code" />
     <MESSAGE value="Added astar and artic points" />
     <MESSAGE value="Finished ArticulationPoints, havn't tested" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished ArticulationPoints, havn't tested" />
+    <MESSAGE value="still not sure on walking edges" />
+    <option name="LAST_COMMIT_MESSAGE" value="still not sure on walking edges" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
