@@ -16,9 +16,9 @@ public class AStar {
 
 
     // find the shortest path between two stops
-    public static List<Edge> findShortestPath(Stop start, Stop goal, String timeOrDistance) {
+    public static List<Edge> findShortestPath(Stop start, Stop goal, String timeOrDist) {
         if (start == null || goal == null) {return null;}
-        timeOrDistance= (timeOrDistance.equals("time"))?"time":"distance";
+        timeOrDistance= (timeOrDist.equals("time"))?"time":"distance";
 
         // fringe = currentNode, previousEdge, costSoFar, estimatedTotalCost
 

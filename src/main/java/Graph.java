@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
@@ -116,7 +117,7 @@ public class Graph {
      * Assume that all the previous walking edges have been removed
      */
     public void recomputeWalkingEdges(double walkingDistance) {
-        int count = 0;
+        AtomicInteger count = new AtomicInteger();
 
         Map<Stop,Stop> validWalks = new HashMap<Stop,Stop>();
         stops.forEach((Stop stop)->{
@@ -126,16 +127,19 @@ public class Graph {
                 }
             }
         });
-        count = validWalks.size();
         validWalks.forEach((Stop from, Stop to)->{
-            Edge edge = new Edge(from, to, Transport.WALKING, null, 0, from.distanceTo(to));
-            Edge edge2 = new Edge(to, from, Transport.WALKING, null, 0, from.distanceTo(to));
-            edges.add(edge);
-            edges.add(edge2);
-            from.addForwardEdge(edge);
-            to.addBackwardEdge(edge);
-            to.addForwardEdge(edge2);
-            from.addBackwardEdge(edge2);
+            if(!from.equals(to)) {
+                Edge edge = new Edge(from, to, Transport.WALKING, null,from.distanceTo(to)/Transport.WALKING_SPEED_MPS, from.distanceTo(to));
+                Edge edge2 = new Edge(to, from, Transport.WALKING, null, from.distanceTo(to)/Transport.WALKING_SPEED_MPS, from.distanceTo(to));
+                edges.add(edge);
+                edges.add(edge2);
+                from.addForwardEdge(edge);
+                to.addBackwardEdge(edge);
+                to.addForwardEdge(edge2);
+                from.addBackwardEdge(edge2);
+                count.getAndIncrement();
+                count.getAndIncrement();
+            }
         });
 
         System.out.println("Number of walking edges added: " + count);
