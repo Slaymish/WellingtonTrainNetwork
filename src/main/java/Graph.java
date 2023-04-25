@@ -131,9 +131,10 @@ public class Graph {
                     stop2.addForwardEdge(edge2);
                     stop2.addBackwardEdge(edge1);
 
-                    stop1.addNeighbour(stop2);
-                    stop2.addNeighbour(stop1);
                     count++;
+
+                    edges.add(edge1);
+                    edges.add(edge2);
                 }
             }
         }
