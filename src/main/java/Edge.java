@@ -5,7 +5,6 @@
  * line is the line that this edge is part of (null if it is a WALKING edge)
  * time is the time it takes to travel this edge
  * distance is the distance along the edge.
- *
  * This could almost be a record class, but making the toString() efficient requires
  *  caching the string in a field that is not a parameter of the constructor.
  */
@@ -22,6 +21,9 @@ public class Edge {
     private final double distance; // distance between the two stops of the edge
 
     private final String toString;   // compute the string representation just once.
+
+    // Challenge
+    private Transfer transfer = null;
     
     public Edge(Stop fromStop, Stop toStop, String transpType, Line line, double time, double distance){
         this.fromStop = fromStop;
@@ -48,4 +50,7 @@ public class Edge {
 
     public String toString() {return this.toString;}
 
+    public void addTransfer(Transfer transfer) {this.transfer = transfer;}
+
+    public Transfer getTransfer() {return transfer;}
 }

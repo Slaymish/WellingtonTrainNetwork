@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
@@ -21,20 +20,53 @@ public class Graph {
     private Collection<Line> lines;
     private Collection<Edge> edges = new HashSet<Edge>();      // edges between Stops
 
+    private Collection<Transfer> transfers;
+
     private int numComponents = 0;     // number of connected subgraphs (graph components)
 
     /**
      * Construct a new graph given a collection of stops and a collection of lines.
      */
+    public Graph(Collection<Stop> stops, Collection<Line> lines, Collection<Transfer> transfers) {
+        this.stops = new TreeSet<Stop>(stops);
+        this.lines = lines;
+        this.transfers = transfers;
+
+        // These are two of the key methods you must complete:
+        createAndConnectEdges();
+        addTransfersToEdges();
+        computeNeighbours();
+
+        // printGraphData();   // you could uncomment this to help in debugging your code
+    }
+
     public Graph(Collection<Stop> stops, Collection<Line> lines) {
+        System.out.println("Creating non challenge graph");
         this.stops = new TreeSet<Stop>(stops);
         this.lines = lines;
 
         // These are two of the key methods you must complete:
         createAndConnectEdges();
         computeNeighbours();
+    }
 
-        // printGraphData();   // you could uncomment this to help in debugging your code
+    private void addTransfersToEdges() {
+        for (Transfer transfer : transfers) {
+            // Find edge between fromStop and toStop
+            Edge edge = null;
+            for (Edge e : edges) {
+                if (e.fromStop().equals(transfer.getFromStop()) && e.toStop().equals(transfer.getToStop())) {
+                    edge = e;
+                    break;
+                }
+            }
+            if (edge == null) {System.out.println("Edge not found for transfer: " + transfer);}
+            else{
+                edge.addTransfer(transfer);
+                System.out.println("Added " + transfer.toString() + " to edge");
+            }
+        }
+        System.out.println("Added transfers to edges");
     }
 
 
