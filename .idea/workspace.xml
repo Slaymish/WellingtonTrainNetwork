@@ -6,7 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="a9d33c4d-c10b-45c9-9cfb-6ef71da587e8" name="Changes" comment="tidied">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AStar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/AStar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/ArticulationPoints.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/Components.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/Edge.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/GisPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/Graph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/Line.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/PathItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/Projection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/Stop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/TestAStar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/TestArticPts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/TestGraphAndComponents.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/Transport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/challenge/Zoning.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,21 +50,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2/src/main/java/challenge&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.44942528&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2 Challenge",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.44942528",
+    "settings.editor.selected.configurable": "preferences.pathVariables"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/challenge" />
@@ -68,6 +84,26 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.WellingtonTrains">
+    <configuration name="WellingtonTrains Challenge" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="18" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="challenge.Main" />
+      <module name="COMPAssignment2" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.fxml,javafx.controls,javafx.graphics" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WellingtonTrains (test)" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -82,14 +118,25 @@
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="COMPAssignment2" />
+      <module name="COMPAssignment2 Challenge" />
       <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.fxml,javafx.controls,javafx.graphics" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.WellingtonTrains" />
+      <item itemvalue="Application.WellingtonTrains Challenge" />
       <item itemvalue="Application.WellingtonTrains (test)" />
     </list>
   </component>
@@ -110,6 +157,8 @@
       <workItem from="1682212392191" duration="5380000" />
       <workItem from="1682234522964" duration="3608000" />
       <workItem from="1682401203564" duration="2119000" />
+      <workItem from="1682554993717" duration="117000" />
+      <workItem from="1682555167230" duration="71000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1681612249181</created>
@@ -223,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682401709179</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="tidied">
+      <created>1682555006125</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1682555006125</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
