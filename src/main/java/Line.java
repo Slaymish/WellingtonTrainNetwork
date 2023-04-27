@@ -64,5 +64,4 @@ public class Line {
     public List<Integer> getTimes() {
         return  Collections.unmodifiableList(times);
     }
-
 }

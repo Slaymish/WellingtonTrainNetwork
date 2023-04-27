@@ -9,11 +9,7 @@ import java.util.*;
 
 
 public class AStar {
-
-
     private static String timeOrDistance = "distance";    // way of calculating cost: "time" or "distance"
-
-
 
     // find the shortest path between two stops
     public static List<Edge> findShortestPath(Stop start, Stop goal, String timeOrDist) {
@@ -54,7 +50,7 @@ public class AStar {
                 }
             }
         }
-        return null;   // fix this!!!
+        return null;
     }
 
 

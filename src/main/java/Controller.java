@@ -15,17 +15,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 
-import java.util.Locale;
+import java.util.*;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.HashMap;
-import java.util.Map;
 
 import javafx.beans.value.ObservableValue;
 import javafx.event.*;
@@ -96,10 +90,11 @@ public class Controller {
     public void initialize() {
 
         // load the input files
-        Map<String, Stop> stopMap = loadStops(new File("/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2/src/data/stops.txt"));
-        Collection<Line> lines = loadLines(new File("/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2/src/data/lines.txt"), stopMap);
-                               
-        this.graph = new Graph(stopMap.values(), lines);
+        Map<String, Stop> stopMap = loadStops(new File("/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2 Challenge/src/data/stops.txt"));
+        Collection<Line> lines = loadLines(new File("/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2 Challenge/src/data/lines.txt"), stopMap);
+        Collection<Transfer> transfers = loadTransfers(new File("/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2 Challenge/src/data/transfers.txt"), stopMap);
+
+        this.graph = new Graph(stopMap.values(), lines, transfers);
         System.out.println("Loaded Graph Data");
         
         this.zoneData = new Zoning(new File("/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2/src/data/WellingtonZones.csv"));
@@ -601,6 +596,46 @@ public class Controller {
             System.out.println("Loaded "+ lineMap.size()+" lines");
         } catch (IOException e) {throw new RuntimeException("Loading the lines file failed.");}
         return lineMap.values();
+    }
+
+    /** Load the transfers data from the transfers file
+     * File contains: from_stop_id,to_stop_id,transfer_type,min_transfer_time,from_trip_id,to_trip_id
+     * Uses the stopMap to turn the stop_id's into Stops
+     */
+    public static Collection<Transfer> loadTransfers(File transfersFile, Map<String, Stop> stopMap) {
+        if (stopMap.isEmpty()) {throw new RuntimeException("loadTransfers given an empty stopMap.");}
+        // check if the transfers file exists
+        if (!transfersFile.exists()) {
+            System.out.println("No transfers file found.");
+            return new HashSet<Transfer>();
+        }
+        Collection<Transfer> transfers = new HashSet<Transfer>();
+        try {
+            System.out.println("Reading data from: " + transfersFile);
+            List<String> dataLines = Files.readAllLines(transfersFile.toPath());
+            dataLines.remove(0); //throw away the top line of the file.
+            for (String dataLine : dataLines) {// read in each line of the file
+                // tokenise the line by splitting it on tabs".
+                String[] tokens = dataLine.split(",");
+                if (tokens.length >= 4) {
+                    // process the tokens
+                    String fromStopId = tokens[0];
+                    String toStopId = tokens[1];
+                    int time = Integer.parseInt(tokens[3]);
+                    int transferType = Integer.parseInt(tokens[2]);
+                    Stop fromStop = stopMap.get(fromStopId);
+                    Stop toStop = stopMap.get(toStopId);
+                    Transfer transfer = new Transfer(transferType, time, fromStop, toStop);
+                    transfers.add(transfer);
+                } else {
+                    System.out.println("Transfers file has broken entry: " + dataLine);
+                }
+
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Loading the transfers file failed.");
+        }
+        return transfers;
     }
 
 }
