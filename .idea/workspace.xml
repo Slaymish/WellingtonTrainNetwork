@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9d33c4d-c10b-45c9-9cfb-6ef71da587e8" name="Changes" comment="finished walking edges">
+    <list default="true" id="a9d33c4d-c10b-45c9-9cfb-6ef71da587e8" name="Changes" comment="tidied">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AStar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +109,7 @@
       <workItem from="1681966158476" duration="2382000" />
       <workItem from="1682212392191" duration="5380000" />
       <workItem from="1682234522964" duration="3608000" />
-      <workItem from="1682401203564" duration="429000" />
+      <workItem from="1682401203564" duration="2119000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1681612249181</created>
@@ -217,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682239309441</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="tidied">
+      <created>1682401709179</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1682401709179</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +251,8 @@
     <MESSAGE value="Finished ArticulationPoints, havn't tested" />
     <MESSAGE value="still not sure on walking edges" />
     <MESSAGE value="finished walking edges" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished walking edges" />
+    <MESSAGE value="tidied" />
+    <option name="LAST_COMMIT_MESSAGE" value="tidied" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
