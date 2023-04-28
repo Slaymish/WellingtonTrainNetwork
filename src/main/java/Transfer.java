@@ -31,6 +31,9 @@ public class Transfer {
     }
 
     public String toString() {
-        return "Transfer: From:" + fromStop + ", To:" + toStop + " - Transfer time: " + minTransferTime + " - Transport type: " + transpType;
+        if(fromStop == null || toStop == null) {
+            return "Transfer: From: null, To: null - Transport type: " + transpType;
+        }
+        return "Transfer: From:" + fromStop.getName() + ", To:" + toStop.getName() + " - Transport type: " + transpType;
     }
 }
