@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
@@ -8,6 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *  a Map of the Lines, indexed by lineId.
  * The Stops in the map have their id, name and GIS location.
  * The Lines in the map have their id, and lists of the stopIDs an times (in order)
+ *
  * To build the actual graph structure, it is necessary to
  *  build the list of Edges out of each stop and the list of Edges into each stop
  * Each pair of adjacent stops in a Line is an edge.
@@ -18,9 +18,7 @@ public class Graph {
 
     private Collection<Stop> stops;
     private Collection<Line> lines;
-    private Collection<Edge> edges = new HashSet<>();      // edges between Stops
-
-    private Collection<Trip> trips;
+    private Collection<Edge> edges = new HashSet<Edge>();      // edges between Stops
 
     private Collection<Transfer> transfers;
 
@@ -29,14 +27,10 @@ public class Graph {
     /**
      * Construct a new graph given a collection of stops and a collection of lines.
      */
-    public Graph(Collection<Stop> stops, Collection<Line> lines, Collection<Transfer> transfers, Collection<Trip> trips) {
+    public Graph(Collection<Stop> stops, Collection<Line> lines, Collection<Transfer> transfers) {
         this.stops = new TreeSet<Stop>(stops);
         this.lines = lines;
         this.transfers = transfers;
-        this.trips = trips;
-
-        System.out.println("Theres " + transfers.size() + " transfers");
-        System.out.println("Theres " + trips.size() + " trips");
 
         // These are two of the key methods you must complete:
         createAndConnectEdges();
@@ -57,28 +51,22 @@ public class Graph {
     }
 
     private void addTransfersToEdges() {
-        AtomicInteger count = new AtomicInteger();
-        edges.forEach(edge -> {
-            transfers.forEach(transfer -> {
-                if (compareStops(transfer,edge)){
-                    edge.addTransfer(transfer);
-                    count.getAndIncrement();
-                    System.out.println("Added: " + transfer.toString());
+        for (Transfer transfer : transfers) {
+            // Find edge between fromStop and toStop
+            Edge edge = null;
+            for (Edge e : edges) {
+                if (e.fromStop().equals(transfer.getFromStop()) && e.toStop().equals(transfer.getToStop())) {
+                    edge = e;
+                    break;
                 }
-            });
-        });
-        System.out.println("Added " + count.get() + " transfers to edges");
-
-    }
-
-    private boolean compareStops(Transfer transfer, Edge edge){
-        String transferFromId = transfer.getFromStop().getId();
-        String transferToId = transfer.getToStop().getId();
-
-        String edgeFromId = edge.fromStop().getId();
-        String edgeToId = edge.toStop().getId();
-
-        return transferFromId.equals(edgeFromId) && transferToId.equals(edgeToId);
+            }
+            if (edge == null) {System.out.println("Edge not found for transfer: " + transfer);}
+            else{
+                edge.addTransfer(transfer);
+                System.out.println("Added " + transfer.toString() + " to edge");
+            }
+        }
+        System.out.println("Added transfers to edges");
     }
 
 

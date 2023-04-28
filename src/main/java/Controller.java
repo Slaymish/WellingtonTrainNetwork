@@ -24,8 +24,6 @@ import java.nio.file.Files;
 import javafx.beans.value.ObservableValue;
 import javafx.event.*;
 
-import javax.swing.text.html.Option;
-
 public class Controller {
 
     public Graph graph;
@@ -95,47 +93,14 @@ public class Controller {
         Map<String, Stop> stopMap = loadStops(new File("/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2 Challenge/src/data/stops.txt"));
         Collection<Line> lines = loadLines(new File("/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2 Challenge/src/data/lines.txt"), stopMap);
         Collection<Transfer> transfers = loadTransfers(new File("/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2 Challenge/src/data/transfers.txt"), stopMap);
-        Map<String, Trip> trips = loadTrips(new File("/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2 Challenge/src/data/trips.txt"), stopMap);
-        this.graph = new Graph(stopMap.values(), lines, transfers,trips.values());
+
+        this.graph = new Graph(stopMap.values(), lines, transfers);
         System.out.println("Loaded Graph Data");
         
         this.zoneData = new Zoning(new File("/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2/src/data/WellingtonZones.csv"));
         System.out.println("Loaded Zone Data");
 
         drawGraph(graph);
-    }
-
-    private Map<String,Trip> loadTrips(File file, Map<String,Stop> stopMap) {
-        // route_id,service_id,trip_id,trip_headsign,direction_id,block_id,shape_id,wheelchair_accessible,bikes_allowed,etm_id
-
-        Map<String,Trip> trips = new HashMap<String,Trip>();
-        try {
-            List<String> lines = Files.readAllLines(file.toPath());
-            for (String line : lines) {
-                String[] parts = line.split(",");
-                if (parts.length != 10) {
-                    System.out.println("Error: invalid trip line: " + line);
-                    continue;
-                }
-                String routeId = parts[0];
-                String serviceId = parts[1];
-                String tripId = parts[2];
-                String tripHeadsign = parts[3];
-                String directionId = parts[4];
-                String blockId = parts[5];
-                String shapeId = parts[6];
-                String wheelchairAccessible = parts[7];
-                String bikesAllowed = parts[8];
-                String etmId = parts[9];
-                trips.put(tripId, new Trip(routeId, serviceId, tripId, tripHeadsign, directionId, blockId, shapeId, wheelchairAccessible, bikesAllowed, etmId));
-            }
-        } catch (IOException e) {
-            System.out.println("Error: unable to open trips file: " + file.getName());
-        } catch (NumberFormatException e) {
-            System.out.println("Error: invalid number in trips file: " + file.getName());
-        }
-
-        return trips;
     }
 
     // get scale
@@ -650,18 +615,18 @@ public class Controller {
             List<String> dataLines = Files.readAllLines(transfersFile.toPath());
             dataLines.remove(0); //throw away the top line of the file.
             for (String dataLine : dataLines) {// read in each line of the file
+                // tokenise the line by splitting it on tabs".
                 String[] tokens = dataLine.split(",");
                 if (tokens.length >= 4) {
+                    // process the tokens
                     String fromStopId = tokens[0];
                     String toStopId = tokens[1];
                     int time = Integer.parseInt(tokens[3]);
                     int transferType = Integer.parseInt(tokens[2]);
-                    Optional<Stop> fromStop = Optional.ofNullable(stopMap.get(fromStopId));
-                    Optional<Stop> toStop = Optional.ofNullable(stopMap.get(toStopId));
-                    if (fromStop.isPresent() && toStop.isPresent()) {
-                        Transfer transfer = new Transfer(transferType, time, fromStop.get(), toStop.get());
-                        transfers.add(transfer);
-                    } else {System.out.println("Stops not found: " + dataLine);}
+                    Stop fromStop = stopMap.get(fromStopId);
+                    Stop toStop = stopMap.get(toStopId);
+                    Transfer transfer = new Transfer(transferType, time, fromStop, toStop);
+                    transfers.add(transfer);
                 } else {
                     System.out.println("Transfers file has broken entry: " + dataLine);
                 }
