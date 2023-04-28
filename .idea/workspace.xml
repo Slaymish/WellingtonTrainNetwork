@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9d33c4d-c10b-45c9-9cfb-6ef71da587e8" name="Changes" comment="started chalenge">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Trip.java" afterDir="false" />
+    <list default="true" id="a9d33c4d-c10b-45c9-9cfb-6ef71da587e8" name="Changes" comment="added challenge">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Transfer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/challenge/stop_pattern_trips.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/stop_pattern_trips.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/challenge/stop_times.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/stop_times.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/challenge/transfers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/transfers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/challenge/trips.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/trips.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Edge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Transfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Transfer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Line.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Line.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,21 +47,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2 Challenge&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.44942528&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/hamishburke/Desktop/Uni/Year 2/COMP261/Assignment 2/COMPAssignment2 Challenge",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.44942528",
+    "settings.editor.selected.configurable": "preferences.pathVariables"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/challenge" />
@@ -150,9 +155,7 @@
       <workItem from="1682234522964" duration="3608000" />
       <workItem from="1682401203564" duration="2119000" />
       <workItem from="1682554993717" duration="117000" />
-      <workItem from="1682555167230" duration="3849000" />
-      <workItem from="1682585494809" duration="3359000" />
-      <workItem from="1682641530044" duration="1489000" />
+      <workItem from="1682555167230" duration="2879000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1681612249181</created>
@@ -280,14 +283,7 @@
       <option name="project" value="LOCAL" />
       <updated>1682555306912</updated>
     </task>
-    <task id="LOCAL-00019" summary="started chalenge">
-      <created>1682558205587</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1682558205587</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,8 +313,7 @@
     <MESSAGE value="finished walking edges" />
     <MESSAGE value="tidied" />
     <MESSAGE value="added challenge" />
-    <MESSAGE value="started chalenge" />
-    <option name="LAST_COMMIT_MESSAGE" value="started chalenge" />
+    <option name="LAST_COMMIT_MESSAGE" value="added challenge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
